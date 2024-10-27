@@ -1,0 +1,33 @@
+{
+  "name": "@b4ck5p4c3/node-template",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "lint": "biome lint",
+    "dev": "tsx src/index.ts | pino-pretty",
+    "start": "node dist/index.mjs",
+    "build": "pkgroll --clean-dist"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "pino": "^9.5.0",
+    "pino-pretty": "^11.3.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.2",
+    "@tsconfig/strictest": "^2.0.5",
+    "@types/node": "^22.8.1",
+    "pkgroll": "^2.5.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.5.2"
+  },
+  "exports": {
+    "import": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1"
+}
