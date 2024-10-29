@@ -1,6 +1,7 @@
-import { pino } from "pino";
+import { config } from './utils/config'
+import { logger } from './utils/logger'
 
-const log = pino({ name: "main" });
+const log = logger('name')
 
-log.info("Hi there");
-log.error("This is an error");
+log.info('Hi there!')
+log.info(config, 'Configuration')
