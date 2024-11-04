@@ -19,13 +19,13 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "dev": "tsx src/index.ts | pino-pretty",
+    "dev": "tsx --env-file-if-exists=.env src/index.ts | pino-pretty",
     "dev:check": "tsc --noEmit",
-    "start": "tsx src/index.ts",
-    "prepare": "husky"
+    "start": "tsx --env-file-if-exists=.env src/index.ts",
+    "postinstall": "node ./tools/skip-postinstall.mjs || husky"
   },
   "dependencies": {
-    "dotenv": "^16.4.5",
+    "@tsconfig/strictest": "^2.0.5",
     "pino": "^9.5.0",
     "pino-pretty": "^11.3.0",
     "tsx": "^4.19.2",
@@ -34,7 +34,6 @@
   "devDependencies": {
     "@bksp/style-guide": "^0.2.0",
     "@commitlint/cli": "^19.5.0",
-    "@tsconfig/strictest": "^2.0.5",
     "@types/node": "^22.8.1",
     "eslint": "^9.13.0",
     "husky": "^9.1.6",

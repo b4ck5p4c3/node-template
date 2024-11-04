@@ -1,7 +1,5 @@
-import { config as dotenv } from 'dotenv'
 import { pino } from 'pino'
 import { z } from 'zod'
-dotenv()
 
 const configSchema = z.object({
   DATABASE_URL: z.string().refine(
